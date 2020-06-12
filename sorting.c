@@ -1,5 +1,5 @@
 #include "sorting.h"
-
+#include <stdbool.h>
 // Util function
 void printArray(int *a, int size)
 {
@@ -73,7 +73,7 @@ void merge_sort_internal(int *a, size_t l, size_t r) {
 }
 
 void merge_sort(int *a, size_t length) {
-    merge_sort_internal(a, 0, length);
+    merge_sort_internal(a, 0, length-1);
 }
 
 
@@ -119,7 +119,15 @@ void quick_sort_internal(int* a,size_t l, size_t r) {
 
 }
 void quick_sort(int* a, size_t length) {
-    quick_sort_internal(a, 0, length);
+    quick_sort_internal(a, 0, length-1);
 }
 
+
+void bubble_sort(int* a, size_t length){
+    for (size_t i = 0; i < length-1; i++)
+        // Last i elements are already in place
+        for (size_t j = 0; j < length-i-1; j++)
+            if (a[j] > a[j+1])
+                swap(&a[j], &a[j+1]);
+}
 
