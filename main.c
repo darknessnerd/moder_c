@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include "heron_approximation.h"
 #include "sorting.h"
+#include "data_types.h"
 enum corvid { magpie , raven , jay , chough , corvid_num , };
 
 // A compound literal defines an object.
@@ -128,5 +129,7 @@ int main()
     printf("\nSorted array is \n");
     printArray(arr, arr_size);
 
+    example();
+    example_matrix();
     return EXIT_SUCCESS;
 }
